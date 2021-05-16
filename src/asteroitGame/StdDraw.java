@@ -1836,6 +1836,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
         }
     }
 
+
     /**
      * Returns true if the mouse is being pressed.
      *
@@ -2027,6 +2028,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
             keysDown.remove(e.getKeyCode());
         }
     }
+
 
 
    /***************************************************************************

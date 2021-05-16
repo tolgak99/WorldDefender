@@ -5,12 +5,10 @@ public class Main {
 
     public static void main(String[] args)
     {
-        // Menu m = new Menu();
-        // m.menu();
-
         Window window = new Window();
         window.drawWindow();
 
-
+        Menu m = new Menu();
+        m.menu();
     }
 }

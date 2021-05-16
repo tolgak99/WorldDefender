@@ -31,6 +31,7 @@ public class Window {
         StdDraw.setCanvasSize(width, heigth);
         StdDraw.setPenColor(colors[backgroundColor]);
         StdDraw.filledSquare(1.0, 1.0, 1.0);
+        StdDraw.pause(200);
     }
 
     public void clearWindow()
