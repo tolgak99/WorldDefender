@@ -1,4 +1,5 @@
 package asteroitGame;
+import java.awt.Color;
 
 public class Main {
 
@@ -7,11 +8,16 @@ public class Main {
         // Menu m = new Menu();
         // m.menu();
 
-        Gun a = new Turret();
-        Gun b = new Mortar();
+        createWindow();
 
-        a.fire(1,2,3);
-        b.fire(1,2,3);
 
+    }
+
+    public static void createWindow()
+    {
+        StdDraw.setCanvasSize(1920, 1080);
+        StdDraw.setPenColor(StdDraw.BLACK);
+        StdDraw.filledSquare(1.0, 1.0, 1.0);
+        StdDraw.clear(StdDraw.BLACK);
     }
 }
