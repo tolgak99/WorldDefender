@@ -8,16 +8,9 @@ public class Main {
         // Menu m = new Menu();
         // m.menu();
 
-        createWindow();
+        Window window = new Window();
+        window.drawWindow();
 
 
-    }
-
-    public static void createWindow()
-    {
-        StdDraw.setCanvasSize(1920, 1080);
-        StdDraw.setPenColor(StdDraw.BLACK);
-        StdDraw.filledSquare(1.0, 1.0, 1.0);
-        StdDraw.clear(StdDraw.BLACK);
     }
 }
