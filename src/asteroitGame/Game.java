@@ -11,10 +11,6 @@ public class Game {
         Menu m = new Menu();
         m.menu();
 
-        while (true)
-        {
-
-        }
 
     }
 }
