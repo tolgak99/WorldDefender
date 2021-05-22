@@ -5,10 +5,12 @@ import java.awt.*;
 public class Menu {
     private Font newFont;
     private double[] positionArr;
+    Map map;
 
     public Menu(){
         newFont= new Font("Arial", Font.BOLD, 120);
         entrance();
+        map = new Map();
     }
 
     public void menu() {
@@ -43,9 +45,11 @@ public class Menu {
                         break;
                     case 1:
                         System.out.println("\n PLAYY");
+                        map.printMap();
                         break;
                     case 2:
                         System.out.println("\n ABOUTTT");
+                        aboutPage();
                         break;
                     case 3:
                         System.out.println("\n SETTINGSS");
@@ -146,7 +150,13 @@ public class Menu {
         return -1;
     }
 
-
+    private void aboutPage() {
+        StdDraw.clear(StdDraw.BLACK);
+        newFont =new Font("Arial", Font.BOLD, 20);
+        StdDraw.setFont(newFont);
+        StdDraw.setPenColor(StdDraw.RED);
+        StdDraw.text(0.52,0.01,"Game Purpose");
+    }
 
 
 }

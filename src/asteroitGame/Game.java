@@ -1,7 +1,7 @@
 package asteroitGame;
 import java.awt.Color;
 
-public class Main {
+public class Game {
 
     public static void main(String[] args)
     {
@@ -10,5 +10,11 @@ public class Main {
 
         Menu m = new Menu();
         m.menu();
+
+        while (true)
+        {
+
+        }
+
     }
 }
