@@ -37,9 +37,9 @@ public class Menu {
             if(StdDraw.isMousePressed()) {
                 //System.out.println("\n Mouse_X :"+StdDraw.mouseX()+" Mouse_Y :"+StdDraw.mouseY());//DEBUG Purpose
                 positionArr = mouseLocation();
-                selection=whichSelection(positionArr);
+                selection = whichSelection(positionArr);
 
-                switch(selection){
+                switch (selection) {
                     case -1:
                         System.out.println("\n There is an error about pointing.\n\n");
                         break;
@@ -60,6 +60,7 @@ public class Menu {
                         break;
                 }
                 StdDraw.pause(200);
+                break;
             }
 /*
             if(key == rlutil::KEY_DOWN){ // Move in main menu
