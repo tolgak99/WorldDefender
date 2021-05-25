@@ -15,6 +15,7 @@ public class Menu {
 
     public void menu() {
         int selection;
+        boolean click_test=true;
 
         StdDraw.clear(StdDraw.BLACK);
         newFont =new Font("Arial", Font.BOLD, 80);
@@ -34,7 +35,7 @@ public class Menu {
         StdDraw.text(0.54,0.12,"You can use your mouse to choice from menu or you can use arrow keys, and press enter to choice.");
 
         while(true){
-            if(StdDraw.isMousePressed()) {
+            if(StdDraw.isMousePressed() && click_test) {
                 //System.out.println("\n Mouse_X :"+StdDraw.mouseX()+" Mouse_Y :"+StdDraw.mouseY());//DEBUG Purpose
                 positionArr = mouseLocation();
                 selection = whichSelection(positionArr);
@@ -45,22 +46,25 @@ public class Menu {
                         break;
                     case 1:
                         System.out.println("\n PLAYY");
+                        click_test=false;
                         map.printMap();
                         break;
                     case 2:
                         System.out.println("\n ABOUTTT");
+                        click_test=false;
                         aboutPage();
                         break;
                     case 3:
                         System.out.println("\n SETTINGSS");
+                        click_test=false;
                         break;
                     case 4:
                         //System.out.println("\n EXITTT \n\n ---- \n\n");//DEBUG Purpose
+                        click_test=false;
                         System.exit(0);
                         break;
                 }
                 StdDraw.pause(200);
-                break;
             }
 /*
             if(key == rlutil::KEY_DOWN){ // Move in main menu
