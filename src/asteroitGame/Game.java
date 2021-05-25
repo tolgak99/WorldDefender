@@ -21,6 +21,7 @@ public class Game {
 
         while (true)
         {
+            System.out.println("sa");
             StdDraw.enableDoubleBuffering();
             if (StdDraw.isKeyPressed(KeyEvent.VK_LEFT) ){
                 StdDraw.enableDoubleBuffering();
