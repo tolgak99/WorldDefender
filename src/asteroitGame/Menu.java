@@ -1,6 +1,7 @@
 package asteroitGame;
 
 import java.awt.*;
+import java.lang.ref.Cleaner;
 
 public class Menu {
     private Font newFont;
@@ -35,6 +36,10 @@ public class Menu {
         StdDraw.text(0.54,0.12,"You can use your mouse to choice from menu or you can use arrow keys, and press enter to choice.");
 
         while(true){
+            if(!click_test){
+                break;
+            }
+
             if(StdDraw.isMousePressed() && click_test) {
                 //System.out.println("\n Mouse_X :"+StdDraw.mouseX()+" Mouse_Y :"+StdDraw.mouseY());//DEBUG Purpose
                 positionArr = mouseLocation();
@@ -45,7 +50,7 @@ public class Menu {
                         System.out.println("\n There is an error about pointing.\n\n");
                         break;
                     case 1:
-                        System.out.println("\n PLAYY");
+                        //System.out.println("\n PLAYY");//DEBUG Purpose..
                         click_test=false;
                         map.printMap();
                         break;

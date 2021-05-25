@@ -1,9 +1,13 @@
 package asteroitGame;
 
+import java.util.Random;
+
 public abstract class Asteroit {
-    protected int health, damage, x_cor, y_cor;
+    private double x_cor, y_cor;//Asteroit coordinates.
+    private double min_x,max_x,min_y,max_y;//Asteroit creation borders.
+    protected int health, damage;
     protected double speed;
-    public int fuel_x, fuel_y;
+    public double fuel_x, fuel_y;//will be check if it should be public or private.
 
     public Asteroit(){
         health = 0;
@@ -38,31 +42,35 @@ public abstract class Asteroit {
         */
     }//End of method.
 
-    public int[] getCoordinates(){
-        int[] arr= new int[2];
+    public double[] getCoordinates(){
+        double[] arr= new double[2];
         arr[0] = x_cor;
         arr[1] = y_cor;
         return arr;
     }//End of method.
 
 
-    public void setCor(int x, int y){
+    public void setCor(double x, double y){
         x_cor = x;
         y_cor = y;
     }
+
     public void setHealth(int a){
         health -= a;
     }
 
 
-    //Below functions were virtual in C version.
-
     public void calculater(){
-        //Math.random() can use here in java.
-        /*
-        x_cor = (rand() % 116) + 2;
-        y_cor = (rand() % 27) + 2;
-        */
+        Random rand = new Random();
+
+        min_x=0.015;
+        max_x=0.977;
+        min_y=0.06;
+        max_y=0.95;
+
+        x_cor = min_x+(max_x-min_x)*rand.nextDouble();
+        y_cor = min_y+(max_y-min_y)*rand.nextDouble();
+
     }//End of method.
 
     public abstract void print();

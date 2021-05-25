@@ -9,7 +9,7 @@ public class Map {
     private double rectangleStart_X,rectangleStart_Y, rectangleHalfWidth, rectangleHalfHeight, rectanglePenRadius;
     private double mapLeftX,mapRightX,mapUpY,mapDownY;
 
-    //private ArrayList<Asteroit> AsteroitsArray = new ArrayList<Asteroit>();
+    private ArrayList<Asteroit> AsteroitsArray = new ArrayList<Asteroit>();
 
     public Map(){  //Set map's row and column
         score = 0;
@@ -41,7 +41,7 @@ public class Map {
         num1 = (int)rand.nextInt(30)+1;
         num2 = (int)rand.nextInt(40)+1;
 
-        System.out.println(num0+" num1:"+num1+" num2:"+num2);
+        //System.out.println(num0+" num1:"+num1+" num2:"+num2);//DEBUG Purpose..
 
 
         setWalls();
@@ -65,6 +65,7 @@ public class Map {
         StdDraw.text(0.5, 0.5, "^");
     }
 
+
     private void setAsteroits()
     {
         double x= 0.003; double y= 0.5;
@@ -83,7 +84,7 @@ public class Map {
     }
 
 
-    //dobule array first element represents x axis, and second element represents y axis. (example: double[0] = x, double[1] = y;)
+    //double array first element represents x axis, and second element represents y axis. (example: double[0] = x, double[1] = y;)
     private boolean hitWalls(double[] coordinates) {
 
 

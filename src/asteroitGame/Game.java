@@ -21,7 +21,12 @@ public class Game {
 
         while (true)
         {
-            System.out.println("sa");
+            /*
+            if(StdDraw.isMousePressed())
+                System.out.println("\n Mouse_X :"+StdDraw.mouseX()+" Mouse_Y :"+StdDraw.mouseY());//DEBUG Purpose
+            */
+
+
             StdDraw.enableDoubleBuffering();
             if (StdDraw.isKeyPressed(KeyEvent.VK_LEFT) ){
                 StdDraw.enableDoubleBuffering();
