@@ -43,9 +43,8 @@ public class Map {
 
         //System.out.println(num0+" num1:"+num1+" num2:"+num2);//DEBUG Purpose..
 
-
-        setWalls();
         setSpaceShip();
+        setWalls();
         setAsteroits();
 
 
@@ -63,8 +62,8 @@ public class Map {
     {
         /*StdDraw.setPenColor(StdDraw.WHITE);
         StdDraw.text(0.5, 0.5, "^");*/
-
-        StdDraw.picture(0.5,0.5,"spaceShip.png",0.03,0.05);
+        spaceShip ship = new spaceShip();
+        StdDraw.picture(ship.getXcoord(),ship.getYcoord(),"spaceShip.png",0.03,0.05);
     }
 
 

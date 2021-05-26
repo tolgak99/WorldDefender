@@ -4,12 +4,22 @@ public class spaceShip {
 
     private int fuel;
     private int armor;
+    private double x;
+    private double y;
 
-    spaceShip() {fuel = 100; armor = 100;}
+    spaceShip() {fuel = 100; armor = 100; x = 0.5; y = 0.5;}
 
     public int getFuel() {return fuel;}
 
     public int getArmor() {return  armor;}
+
+    public double getXcoord() {return  x;}
+
+    public double getYcoord() {return  y;}
+
+    public void setXcoord(double x) {this.x = x;}
+
+    public void setYcoord(double y) {this.y= y;}
 
     public boolean getDamage(int damage) {
         if (armor <= 0)
