@@ -63,15 +63,17 @@ public abstract class Asteroit {
     public void calculater(){
         Random rand = new Random();
 
-        min_x=0.015;
-        max_x=0.977;
-        min_y=0.06;
-        max_y=0.95;
+        min_x=0.012;
+        max_x=0.98;
+        min_y=0.16;
+        max_y=0.96;
 
         x_cor = min_x+(max_x-min_x)*rand.nextDouble();
         y_cor = min_y+(max_y-min_y)*rand.nextDouble();
 
     }//End of method.
 
+
+    //Abstract function to print asteroids.
     public abstract void print();
 }

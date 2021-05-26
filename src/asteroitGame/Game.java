@@ -1,5 +1,5 @@
 package asteroitGame;
-import com.sun.source.doctree.AttributeTree;
+import com.sun.source.doctree.AttributeTree; // will be check if it is necessary.
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -23,9 +23,11 @@ public class Game {
         StdDraw.enableDoubleBuffering();
         while (true)
         {
-
+            /*
             if(StdDraw.isMousePressed())
                 System.out.println("\n Mouse_X :"+StdDraw.mouseX()+" Mouse_Y :"+StdDraw.mouseY());//DEBUG Purpose
+            */
+
 
             if (StdDraw.isKeyPressed(KeyEvent.VK_LEFT) || StdDraw.isKeyPressed(KeyEvent.VK_A) ){
                 //StdDraw.enableDoubleBuffering();

@@ -10,13 +10,6 @@ public class Medium_ast extends Asteroit{
 
 
     public void print(){
-        /*
-        if (x_cor != 70 || y_cor != 15) {
-            rlutil::setColor(10);
-            rlutil::locate(x_cor, y_cor);
-            cout << "@";
-            rlutil::setColor(7);
-        }
-        */
+        //StdDraw.picture(x_cor,y_cor,"asteroid-medium.png",0.03,0.05);
     }//End of method.
 }

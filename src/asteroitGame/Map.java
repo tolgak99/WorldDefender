@@ -21,9 +21,9 @@ public class Map {
 
         //Initialize parameters of rectangle.
         rectangleStart_X=0.498;
-        rectangleStart_Y= 0.505;
+        rectangleStart_Y= 0.536;
         rectangleHalfWidth=0.495;
-        rectangleHalfHeight=0.47;
+        rectangleHalfHeight=0.45;
         rectanglePenRadius=0.04;
 
         //Calculation of borders.
@@ -45,8 +45,6 @@ public class Map {
         */
 
         setWalls();
-
-
         printAsteroits();
         if(InitializeMap_Test) {
             setAsteroits();
@@ -57,13 +55,15 @@ public class Map {
 
     }
 
+
     private void setWalls()
     {
-        StdDraw.clear(Color.BLACK);
+        StdDraw.clear(Color.BLACK);//Clears screen and prints blank black screen.
         StdDraw.setPenColor(Color.red);
         StdDraw.setPenRadius(rectanglePenRadius);
         StdDraw.rectangle(rectangleStart_X, rectangleStart_Y, rectangleHalfWidth, rectangleHalfHeight);
     }
+
 
     private void setSpaceShip()
     {
@@ -71,6 +71,7 @@ public class Map {
     }
 
 
+    //Creation part of asteroids.
     private void setAsteroits()
     {
         int num0, num1, num2,i;
@@ -92,13 +93,13 @@ public class Map {
 
     }
 
+
+    //Print asteroid function for each frame.
     private void printAsteroits(){
         for(int i=0;i<AsteroitsArray.size();i++){
             AsteroitsArray.get(i).print();
         }
     }
-
-
 
 
     //double array first element represents x axis, and second element represents y axis. (example: double[0] = x, double[1] = y;)
@@ -121,7 +122,11 @@ public class Map {
         return false;
     }
 
+
     public spaceShip getShip() {return ship;}
+
+
+
     /*
     public int hitWall(int, int);
     public int hitAsteroid(Asteroit&, int, int);
