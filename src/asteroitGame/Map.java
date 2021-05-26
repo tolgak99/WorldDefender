@@ -14,6 +14,7 @@ public class Map {
     //static int debug_count=0;//DEBUG Purpose..
 
     private ArrayList<Asteroit> AsteroitsArray = new ArrayList<Asteroit>();
+    spaceShip ship;
 
     public Map(){  //Set map's row and column
         score = 0;
@@ -31,7 +32,7 @@ public class Map {
         mapDownY = rectangleStart_Y-rectangleHalfHeight;
         mapUpY = rectangleStart_Y+rectangleHalfHeight;
 
-
+        ship = new spaceShip();
     }
 
 
@@ -43,11 +44,13 @@ public class Map {
         System.out.println("debug_count : "+debug_count);
         */
 
-        setSpaceShip();
-        if(InitializeMap_Test) {
+        setWalls();
 
-            setWalls();
+
+        printAsteroits();
+        if(InitializeMap_Test) {
             setAsteroits();
+            setSpaceShip();
             InitializeMap_Test=false;
         }
 
@@ -64,9 +67,6 @@ public class Map {
 
     private void setSpaceShip()
     {
-        /*StdDraw.setPenColor(StdDraw.WHITE);
-        StdDraw.text(0.5, 0.5, "^");*/
-        spaceShip ship = new spaceShip();
         StdDraw.picture(ship.getXcoord(),ship.getYcoord(),"spaceShip.png",0.03,0.05);
     }
 
@@ -121,6 +121,7 @@ public class Map {
         return false;
     }
 
+    public spaceShip getShip() {return ship;}
     /*
     public int hitWall(int, int);
     public int hitAsteroid(Asteroit&, int, int);

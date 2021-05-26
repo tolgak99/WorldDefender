@@ -168,5 +168,7 @@ public class Menu {
         StdDraw.text(0.52,0.01,"Game Purpose");
     }
 
+    public Map getMap() {return map;}
+
 
 }

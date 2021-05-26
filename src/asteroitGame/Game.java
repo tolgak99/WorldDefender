@@ -17,8 +17,8 @@ public class Game {
         Menu m = new Menu();
         m.menu();
 
-        Map map = new Map();
-        spaceShip ship = new spaceShip();
+        Map map = m.getMap();
+        spaceShip ship = map.getShip();
 
         StdDraw.enableDoubleBuffering();
         while (true)
@@ -39,8 +39,6 @@ public class Game {
                 else {
                     StdDraw.clear(Color.black);
                     map.printMap();
-                    /*StdDraw.setPenColor(StdDraw.WHITE);
-                    StdDraw.text(x, y, "<");*/
                     StdDraw.picture(x, y, "spaceShip.png", 0.03, 0.05, -90);
                     StdDraw.show();
                     StdDraw.pause(20);
