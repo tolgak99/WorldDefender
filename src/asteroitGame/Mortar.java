@@ -2,7 +2,7 @@ package asteroitGame;
 
 public class Mortar extends Gun{
     @Override
-    public void fire(int a, int b, int c) {
+    public void fire(int a, double b, double c, Map map) {
         System.out.println("This is a mortar!");
     }
 

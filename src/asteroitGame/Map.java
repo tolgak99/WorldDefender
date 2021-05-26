@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Map {
-    private int row, col, score;
+    private int row, col,shipRot;
     private double rectangleStart_X,rectangleStart_Y, rectangleHalfWidth, rectangleHalfHeight, rectanglePenRadius;
     private double mapLeftX,mapRightX,mapUpY,mapDownY;
 
@@ -20,7 +20,6 @@ public class Map {
     private Font newFont;
 
     public Map(){  //Set map's row and column
-        score = 0;
 
         //Initialize parameters of rectangle.
         rectangleStart_X=0.498;
@@ -35,6 +34,7 @@ public class Map {
         mapDownY = rectangleStart_Y-rectangleHalfHeight;
         mapUpY = rectangleStart_Y+rectangleHalfHeight;
 
+        shipRot = 0;
         ship = new spaceShip();
         newFont= new Font("Arial", Font.BOLD, 120);
     }
@@ -60,9 +60,9 @@ public class Map {
         StdDraw.picture(0.84,0.055,"spaceShip.png",0.02,0.03);
         StdDraw.text(0.87,0.05, Integer.toString(ship.getArmor()) );
 
+        setSpaceShip();
         if(InitializeMap_Test) {
             setAsteroits();
-            setSpaceShip();
             InitializeMap_Test=false;
         }
 
@@ -81,7 +81,7 @@ public class Map {
 
     private void setSpaceShip()
     {
-        StdDraw.picture(ship.getXcoord(),ship.getYcoord(),"spaceShip.png",0.03,0.05);
+        StdDraw.picture(ship.getXcoord(),ship.getYcoord(),"spaceShip.png",0.03,0.05, ship.getRotation());
     }
 
 

@@ -6,8 +6,9 @@ public class spaceShip {
     private int armor;
     private double x;
     private double y;
+    private int rotation;
 
-    spaceShip() {fuel = 100; armor = 100; x = 0.5; y = 0.5;}
+    spaceShip() {fuel = 100; armor = 100; x = 0.5; y = 0.5; rotation = 0;}
 
     public int getFuel() {return fuel;}
 
@@ -20,6 +21,10 @@ public class spaceShip {
     public void setXcoord(double x) {this.x = x;}
 
     public void setYcoord(double y) {this.y= y;}
+
+    public void setRotation (int rot) {rotation = rot;}
+
+    public int getRotation () {return rotation;}
 
     public boolean getDamage(int damage) {
         if (armor <= 0)
