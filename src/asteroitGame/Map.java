@@ -88,9 +88,20 @@ public class Map {
             AsteroitsArray.get(i).calculater();
             AsteroitsArray.get(i).print();
         }
+        for(;i<num0+num1;i++){
+            Medium_ast newbie_small_ast = new Medium_ast();
+            AsteroitsArray.add(newbie_small_ast);
+            AsteroitsArray.get(i).calculater();
+            AsteroitsArray.get(i).print();
+        }
+        for(;i<num0+num1+num2;i++){
+            Large_ast newbie_small_ast = new Large_ast();
+            AsteroitsArray.add(newbie_small_ast);
+            AsteroitsArray.get(i).calculater();
+            AsteroitsArray.get(i).print();
+        }
 
-        //System.out.println(num0+" num1:"+num1+" num2:"+num2);//DEBUG Purpose..
-
+        System.out.println(num0+" num1 : "+num1+" num2 : "+num2+" Total array size : "+AsteroitsArray.size());//DEBUG Purpose..
     }
 
 

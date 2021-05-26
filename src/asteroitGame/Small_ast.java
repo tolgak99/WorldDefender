@@ -10,6 +10,6 @@ public class Small_ast extends Asteroit{
 
 
     public void print() {
-        StdDraw.picture(x_cor,y_cor,"asteroid-small.png",0.03,0.05);
+        StdDraw.picture(x_cor,y_cor,"asteroid-small.png",0.032,0.052);
     }//End of method.
 }
