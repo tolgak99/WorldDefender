@@ -15,6 +15,7 @@ public class Map {
 
     private ArrayList<Asteroit> AsteroitsArray = new ArrayList<Asteroit>();
     spaceShip ship;
+    private Font newFont;
 
     public Map(){  //Set map's row and column
         score = 0;
@@ -33,6 +34,7 @@ public class Map {
         mapUpY = rectangleStart_Y+rectangleHalfHeight;
 
         ship = new spaceShip();
+        newFont= new Font("Arial", Font.BOLD, 120);
     }
 
 
@@ -44,8 +46,18 @@ public class Map {
         System.out.println("debug_count : "+debug_count);
         */
 
-        setWalls();
+        setWalls();          // Must be on the top, it clears the map!!
         printAsteroits();
+
+        newFont =new Font("Arial", Font.BOLD, 20);
+        StdDraw.setFont(newFont);
+        StdDraw.setPenColor(StdDraw.GREEN);
+        StdDraw.picture(0.78,0.055,"gascan.png",0.06,0.06);
+        StdDraw.text(0.8,0.05, Integer.toString(ship.getFuel()) );
+
+        StdDraw.picture(0.84,0.055,"spaceShip.png",0.02,0.03);
+        StdDraw.text(0.87,0.05, Integer.toString(ship.getArmor()) );
+
         if(InitializeMap_Test) {
             setAsteroits();
             setSpaceShip();
@@ -111,28 +123,6 @@ public class Map {
             AsteroitsArray.get(i).print();
         }
     }
-
-
-    //double array first element represents x axis, and second element represents y axis. (example: double[0] = x, double[1] = y;)
-    private boolean hitWalls(double[] coordinates) {
-
-
-        if (coordinates[0] > mapRightX)
-        {
-
-        }
-        else if(coordinates[0] < mapLeftX){
-
-        }
-        else if(coordinates[1] > 0.66){
-
-        }
-        else if(coordinates[1] < 0.75){
-
-        }
-        return false;
-    }
-
 
     public spaceShip getShip() {return ship;}
 
