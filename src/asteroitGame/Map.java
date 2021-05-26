@@ -14,6 +14,8 @@ public class Map {
     //static int debug_count=0;//DEBUG Purpose..
 
     private ArrayList<Asteroit> AsteroitsArray = new ArrayList<Asteroit>();
+
+
     spaceShip ship;
     private Font newFont;
 
@@ -120,17 +122,19 @@ public class Map {
     //Print asteroid function for each frame.
     private void printAsteroits(){
         for(int i=0;i<AsteroitsArray.size();i++){
-            AsteroitsArray.get(i).print();
+            if(AsteroitsArray.get(i).isActive)
+                AsteroitsArray.get(i).print();
         }
     }
 
     public spaceShip getShip() {return ship;}
 
-
+    public ArrayList<Asteroit> getAsteroitsArray() {
+        return AsteroitsArray;
+    }
 
     /*
     public int hitWall(int, int);
-    public int hitAsteroid(Asteroit&, int, int);
     public void MortarFire(Asteroit&, int, int);
      */
 }

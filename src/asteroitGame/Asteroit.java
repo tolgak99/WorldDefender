@@ -6,8 +6,14 @@ public abstract class Asteroit {
     protected double x_cor, y_cor;//Asteroit coordinates.
     private double min_x,max_x,min_y,max_y;//Asteroit creation borders.
     protected int health, damage;
-    protected double speed;
+    protected boolean isActive;
+
+    protected double speed;// will be check later.
+
+
     public double fuel_x, fuel_y;//will be check if it should be public or private.
+
+
 
     public Asteroit(){
         health = 0;
@@ -17,6 +23,7 @@ public abstract class Asteroit {
         y_cor = 0;
         fuel_x = -1;
         fuel_y = -1;
+        isActive=true;
     }//End of default constructor.
 
 
@@ -28,18 +35,21 @@ public abstract class Asteroit {
         return health;
     }
 
+
+    //This method changes isActive variable to false.
+    public void destroyAsteroid(){
+        isActive=false;
+    }
+
+
     public void createFuel(){
         fuel_x = x_cor;
         fuel_y = y_cor;
     }//End of method.
 
+
     public void printFuel(){
-        /*
-        rlutil::setColor(8);
-        rlutil::locate(fuel_x, fuel_y);
-        cout << (char)232;
-        rlutil::setColor(7);
-        */
+        //StdDraw.picture(x_cor,y_cor,"gascan.png",0.06,0.06);
     }//End of method.
 
     public double[] getCoordinates(){

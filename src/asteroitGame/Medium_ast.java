@@ -6,10 +6,11 @@ public class Medium_ast extends Asteroit{
         health = 20;
         damage = 20;
         speed = 0;
+        isActive=true;
     }//End of default constructor.
 
 
     public void print(){
-        StdDraw.picture(x_cor,y_cor,"asteroid-medium.png",0.035,0.055);
+        StdDraw.picture(x_cor,y_cor,"asteroid-medium.png",0.033,0.053);
     }//End of method.
 }

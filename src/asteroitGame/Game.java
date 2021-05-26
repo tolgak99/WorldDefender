@@ -3,13 +3,25 @@ import com.sun.source.doctree.AttributeTree; // will be check if it is necessary
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class Game {
 
+    private static int hitAsteroid(Asteroit obj, double x, double y){
+        double[] arr= obj.getCoordinates();
+
+        if ((Math.abs(arr[0]-x)< 0.022)&& (Math.abs(arr[1]-y)<0.022) && obj.isActive){
+            return obj.getDamage();
+        }
+        else
+            return 0;
+    }
+
     public static void main(String[] args)
     {
-       double x=0.5;
-       double y=0.5;
+        int i, collision;
+        double x=0.5;
+        double y=0.5;
 
         Window window = new Window();
         window.drawWindow();
@@ -19,6 +31,9 @@ public class Game {
 
         Map map = m.getMap();
         spaceShip ship = map.getShip();
+
+        ArrayList<Asteroit> Asteroits = map.getAsteroitsArray();
+
 
         StdDraw.enableDoubleBuffering();
         while (true)
@@ -37,6 +52,7 @@ public class Game {
                     x = 0.03;
                     ship.setXcoord(x);
                     StdDraw.picture(x,y,"spaceShip.png",0.03,0.05,90);
+                    ship.getDamage(10);
                 }
                 else {
                     StdDraw.clear(Color.black);
@@ -46,6 +62,22 @@ public class Game {
                     StdDraw.pause(20);
                     ship.consumeFuel(1);
                 }
+
+
+
+                for(i=0;i<Asteroits.size();i++){
+                    collision=hitAsteroid(Asteroits.get(i),x,y);
+                    //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
+                    if (collision != 0) {
+                        System.out.println("\n if e girdi\n");
+                        ship.getDamage(collision);
+                        Asteroits.get(i).destroyAsteroid();
+                    }
+
+
+                }
+
+
             }
             else if (StdDraw.isKeyPressed(KeyEvent.VK_RIGHT) || StdDraw.isKeyPressed(KeyEvent.VK_D) ){
                 //StdDraw.enableDoubleBuffering();
@@ -67,6 +99,22 @@ public class Game {
                     StdDraw.pause(20);
                     ship.consumeFuel(1);
                 }
+
+
+
+                for(i=0;i<Asteroits.size();i++){
+                    collision=hitAsteroid(Asteroits.get(i),x,y);
+                    //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
+                    if (collision != 0) {
+                        System.out.println("\n if e girdi\n");
+                        ship.getDamage(collision);
+                        Asteroits.get(i).destroyAsteroid();
+                    }
+
+
+                }
+
+
             }
             else if (StdDraw.isKeyPressed(KeyEvent.VK_UP) || StdDraw.isKeyPressed(KeyEvent.VK_W) ){
                 //StdDraw.enableDoubleBuffering();
@@ -88,6 +136,22 @@ public class Game {
                     StdDraw.pause(20);
                     ship.consumeFuel(1);
                 }
+
+
+
+                for(i=0;i<Asteroits.size();i++){
+                    collision=hitAsteroid(Asteroits.get(i),x,y);
+                    //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
+                    if (collision != 0) {
+                        System.out.println("\n if e girdi\n");
+                        ship.getDamage(collision);
+                        Asteroits.get(i).destroyAsteroid();
+                    }
+
+
+                }
+
+
             }
             else if (StdDraw.isKeyPressed(KeyEvent.VK_DOWN) || StdDraw.isKeyPressed(KeyEvent.VK_S) ){
                 //StdDraw.enableDoubleBuffering();
@@ -109,6 +173,22 @@ public class Game {
                     StdDraw.pause(20);
                     ship.consumeFuel(1);
                 }
+
+
+
+                for(i=0;i<Asteroits.size();i++){
+                    collision=hitAsteroid(Asteroits.get(i),x,y);
+                    //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
+                    if (collision != 0) {
+                        System.out.println("\n if e girdi\n");
+                        ship.getDamage(collision);
+                        Asteroits.get(i).destroyAsteroid();
+                    }
+
+
+                }
+
+
             }
         }
 

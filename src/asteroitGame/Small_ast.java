@@ -6,10 +6,11 @@ public class Small_ast extends Asteroit{
         health = 10;
         damage = 10;
         speed = 0;
+        isActive=true;
     }//End of default constructor.
 
 
     public void print() {
-        StdDraw.picture(x_cor,y_cor,"asteroid-small.png",0.032,0.052);
+        StdDraw.picture(x_cor,y_cor,"asteroid-small.png",0.03,0.05);
     }//End of method.
 }
