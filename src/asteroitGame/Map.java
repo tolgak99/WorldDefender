@@ -61,8 +61,10 @@ public class Map {
 
     private void setSpaceShip()
     {
-        StdDraw.setPenColor(StdDraw.WHITE);
-        StdDraw.text(0.5, 0.5, "^");
+        /*StdDraw.setPenColor(StdDraw.WHITE);
+        StdDraw.text(0.5, 0.5, "^");*/
+
+        StdDraw.picture(0.5,0.5,"spaceShip.png",0.03,0.05);
     }
 
 

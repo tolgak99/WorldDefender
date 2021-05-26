@@ -33,8 +33,9 @@ public class Game {
                 x = x - 0.01;
                 StdDraw.clear(Color.black);
                 map.printMap();
-                StdDraw.setPenColor(StdDraw.WHITE);
-                StdDraw.text(x, y, "<");
+                /*StdDraw.setPenColor(StdDraw.WHITE);
+                StdDraw.text(x, y, "<");*/
+                StdDraw.picture(x,y,"spaceShip.png",0.03,0.05,-90);
                 StdDraw.show();
                 StdDraw.pause(20);
             }
@@ -43,8 +44,9 @@ public class Game {
                 x = x + 0.01;
                 StdDraw.clear(Color.black);
                 map.printMap();
-                StdDraw.setPenColor(StdDraw.WHITE);
-                StdDraw.text(x, y, ">");
+                /*StdDraw.setPenColor(StdDraw.WHITE);
+                StdDraw.text(x, y, ">");*/
+                StdDraw.picture(x,y,"spaceShip.png",0.03,0.05,90);
                 StdDraw.show();
                 StdDraw.pause(20);
             }
@@ -53,8 +55,9 @@ public class Game {
                 y = y + 0.01;
                 StdDraw.clear(Color.black);
                 map.printMap();
-                StdDraw.setPenColor(StdDraw.WHITE);
-                StdDraw.text(x, y, "^");
+                /*StdDraw.setPenColor(StdDraw.WHITE);
+                StdDraw.text(x, y, "^");*/
+                StdDraw.picture(x,y,"spaceShip.png",0.03,0.05);
                 StdDraw.show();
                 StdDraw.pause(20);
             }
@@ -63,8 +66,9 @@ public class Game {
                 y = y - 0.01;
                 StdDraw.clear(Color.black);
                 map.printMap();
-                StdDraw.setPenColor(StdDraw.WHITE);
-                StdDraw.text(x, y, "v");
+                /*StdDraw.setPenColor(StdDraw.WHITE);
+                StdDraw.text(x, y, "v");*/
+                StdDraw.picture(x,y,"spaceShip.png",0.03,0.05,180);
                 StdDraw.show();
                 StdDraw.pause(20);
             }
