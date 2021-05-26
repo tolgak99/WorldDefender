@@ -9,6 +9,10 @@ public class Map {
     private double rectangleStart_X,rectangleStart_Y, rectangleHalfWidth, rectangleHalfHeight, rectanglePenRadius;
     private double mapLeftX,mapRightX,mapUpY,mapDownY;
 
+    static boolean InitializeMap_Test=true;
+
+    //static int debug_count=0;//DEBUG Purpose..
+
     private ArrayList<Asteroit> AsteroitsArray = new ArrayList<Asteroit>();
 
     public Map(){  //Set map's row and column
@@ -34,18 +38,18 @@ public class Map {
 
     public void printMap()
     {
-        int num0, num1, num2;
-        Random rand = new Random();
-
-        num0 = (int)rand.nextInt(20)+1;
-        num1 = (int)rand.nextInt(30)+1;
-        num2 = (int)rand.nextInt(40)+1;
-
-        //System.out.println(num0+" num1:"+num1+" num2:"+num2);//DEBUG Purpose..
+        /*
+        debug_count++;
+        System.out.println("debug_count : "+debug_count);
+        */
 
         setSpaceShip();
-        setWalls();
-        setAsteroits();
+        if(InitializeMap_Test) {
+
+            setWalls();
+            setAsteroits();
+            InitializeMap_Test=false;
+        }
 
 
     }
@@ -69,20 +73,32 @@ public class Map {
 
     private void setAsteroits()
     {
-        double x= 0.003; double y= 0.5;
+        int num0, num1, num2,i;
+        Random rand = new Random();
+
+        num0 = (int)rand.nextInt(20)+1;
+        num1 = (int)rand.nextInt(30)+1;
+        num2 = (int)rand.nextInt(40)+1;
 
 
-/*
-        if (coordinates[0] > mapRightX && coordinates[0] < mapLeftX && coordinates[1] > 0.66 && coordinates[1] < 0.75) {
-
-
+        for(i=0;i<num0;i++){
+            Small_ast newbie_small_ast = new Small_ast();
+            AsteroitsArray.add(newbie_small_ast);
+            AsteroitsArray.get(i).calculater();
+            AsteroitsArray.get(i).print();
         }
-*/
-        StdDraw.setPenColor(StdDraw.WHITE);
-        StdDraw.text(0.2, 0.8, "*");
-        StdDraw.setPenColor(StdDraw.WHITE);
-        StdDraw.text(0.8, 0.2, "*");
+
+        //System.out.println(num0+" num1:"+num1+" num2:"+num2);//DEBUG Purpose..
+
     }
+
+    private void printAsteroits(){
+        for(int i=0;i<AsteroitsArray.size();i++){
+            AsteroitsArray.get(i).print();
+        }
+    }
+
+
 
 
     //double array first element represents x axis, and second element represents y axis. (example: double[0] = x, double[1] = y;)

@@ -10,13 +10,6 @@ public class Small_ast extends Asteroit{
 
 
     public void print() {
-        /*
-        if (x_cor != 70 || y_cor != 15) {
-            rlutil::setColor(4);
-            rlutil::locate(x_cor, y_cor);
-            cout << "@";
-            rlutil::setColor(7);
-        }
-        */
+        StdDraw.picture(x_cor,y_cor,"asteroid-small.png",0.03,0.05);
     }//End of method.
 }

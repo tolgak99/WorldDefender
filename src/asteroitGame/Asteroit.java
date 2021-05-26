@@ -3,7 +3,7 @@ package asteroitGame;
 import java.util.Random;
 
 public abstract class Asteroit {
-    private double x_cor, y_cor;//Asteroit coordinates.
+    protected double x_cor, y_cor;//Asteroit coordinates.
     private double min_x,max_x,min_y,max_y;//Asteroit creation borders.
     protected int health, damage;
     protected double speed;
