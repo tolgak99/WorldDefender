@@ -71,23 +71,7 @@ public class Menu {
                 }
                 StdDraw.pause(200);
             }
-/*
-            if(key == rlutil::KEY_DOWN){ // Move in main menu
-                choose +=1;
-            }
-            else if(key==rlutil::KEY_UP){ // Move in main menu
-                choose -=1;
-            }
-            if(key==rlutil::KEY_ENTER){ // Choose the selection
-                choice==choose;
-                rlutil::cls();
-                break;
-
-            }
-
-*/
         }
-
 
     }
 
@@ -162,10 +146,77 @@ public class Menu {
 
     private void aboutPage() {
         StdDraw.clear(StdDraw.BLACK);
-        newFont =new Font("Arial", Font.BOLD, 20);
+        newFont =new Font("Arial", Font.BOLD, 32);
         StdDraw.setFont(newFont);
         StdDraw.setPenColor(StdDraw.RED);
-        StdDraw.text(0.52,0.01,"Game Purpose");
+
+        StdDraw.text(0.48,0.96,"GAME PURPOSE");
+        StdDraw.text(0.48,0.82,"GAME CONTROLS");
+        StdDraw.text(0.48,0.4,"MAP BORDER");
+        StdDraw.text(0.48,0.32,"ASTEROITS");
+
+        newFont =new Font("Arial", Font.ITALIC, 24);
+        StdDraw.setFont(newFont);
+        StdDraw.setPenColor(StdDraw.WHITE);
+
+        StdDraw.text(0.48,0.9,"You are the last hope for the aliens and asteroids attacks to the World. Get in to your spaceship and defend your HOME !!");
+
+        StdDraw.text(0.28,0.66,"Left arrow key for go left.");
+        StdDraw.text(0.48,0.68,"Up arrow key for go up.");
+        StdDraw.text(0.48,0.64,"Down arrow key for go down.");
+        StdDraw.text(0.68,0.66,"Right arrow key for go right.");
+
+        StdDraw.text(0.48,0.56,"When you press enter you need to give coordinates where you want to fire.");
+
+        StdDraw.text(0.48,0.475,"Mortar will shoot these coordinates.");
+
+        StdDraw.text(0.48,0.456,"You can shoot 1 bullet when you press space. If you press and hold you can shoot continuously");
+
+        StdDraw.text(0.48,0.364,"You need to stay away from radiation area or you may die from radiation.");
+
+        StdDraw.text(0.1,0.18,"Health :");
+        StdDraw.text(0.1,0.14,"Fuel Can :");
+        StdDraw.text(0.1,0.1,"Damage :");
+
+        StdDraw.text(0.24,0.18,"10 (1 hit)");
+        StdDraw.text(0.48,0.18,"20 (2 hit)");
+        StdDraw.text(0.72,0.18,"30 (3 hit)");
+
+        StdDraw.text(0.24,0.14,"NOT Drop");
+        StdDraw.text(0.48,0.14,"Drop");
+        StdDraw.text(0.72,0.14,"Drop");
+
+        StdDraw.text(0.24,0.1,"10 Hp");
+        StdDraw.text(0.48,0.1,"20 Hp");
+        StdDraw.text(0.72,0.1,"30 Hp");
+
+
+        newFont =new Font("Arial", Font.BOLD, 26);
+        StdDraw.setFont(newFont);
+        StdDraw.setPenColor(StdDraw.GREEN);
+
+        StdDraw.text(0.48,0.74,"Keyboard Controls");
+        StdDraw.text(0.48,0.6,"Enter Key");
+        StdDraw.text(0.48,0.52,"Space Key");
+
+        newFont =new Font("Arial", Font.ITALIC, 26);
+        StdDraw.setFont(newFont);
+        StdDraw.setPenColor(StdDraw.GREEN);
+
+        StdDraw.text(0.48,0.24,"Green Asteroit");
+
+        newFont =new Font("Arial", Font.ITALIC, 26);
+        StdDraw.setFont(newFont);
+        StdDraw.setPenColor(StdDraw.RED);
+
+        StdDraw.text(0.24,0.24,"Red Asteroit");
+
+        newFont =new Font("Arial", Font.ITALIC, 26);
+        StdDraw.setFont(newFont);
+        StdDraw.setPenColor(StdDraw.YELLOW);
+
+        StdDraw.text(0.72,0.24,"Yellow Asteroit");
+
     }
 
     public Map getMap() {return map;}

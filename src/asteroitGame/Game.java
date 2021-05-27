@@ -32,8 +32,13 @@ public class Game {
 
         Game game = new Game();
 
+
         Menu m = new Menu();
+
+
         m.menu();
+
+
 
         Map map = m.getMap();
         spaceShip ship = map.getShip();
@@ -41,6 +46,7 @@ public class Game {
 
         ArrayList<Asteroit> Asteroits = map.getAsteroitsArray();
 
+        System.out.println("\n This is a test for about page");//DEBUG Purpose..
 
         StdDraw.enableDoubleBuffering();
         while (true) {
