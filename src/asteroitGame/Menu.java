@@ -80,7 +80,7 @@ public class Menu {
         double firstWord_Y =0.7;
         double secondWord_Y =0.54;
 
-        StdDraw.setPenColor(StdDraw.CYAN);
+        StdDraw.setPenColor(StdDraw.WHITE);
         StdDraw.setFont(newFont);
         StdDraw.text(0.2,firstWord_Y,"W");
         StdDraw.pause(timeInterval);
@@ -108,8 +108,12 @@ public class Menu {
         StdDraw.text(0.60,secondWord_Y,"E");
         StdDraw.pause(timeInterval);
         StdDraw.text(0.65,secondWord_Y,"R");
+        StdDraw.pause(timeInterval);
+        StdDraw.picture(0.6,0.36,"remastered_logo.png",0.3,0.3);//
 
-        StdDraw.pause(400);
+
+
+        StdDraw.pause(700);
     }
 
     // Returns a double array which contains x and y coordinates of the mouse location
@@ -146,6 +150,9 @@ public class Menu {
 
     private void aboutPage() {
         StdDraw.clear(StdDraw.BLACK);
+
+        StdDraw.picture(0.022,0.95,"UI_back.png",0.034,0.06);//Back button on the up-left corner.
+
         newFont =new Font("Arial", Font.BOLD, 32);
         StdDraw.setFont(newFont);
         StdDraw.setPenColor(StdDraw.RED);
