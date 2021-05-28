@@ -1,14 +1,17 @@
 package asteroitGame;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.lang.ref.Cleaner;
 
 public class Menu {
     private Font newFont;
     private double[] positionArr;
+    private int menuId;
     Map map;
 
     public Menu(){
+        menuId = 0;
         newFont= new Font("Arial", Font.BOLD, 120);
         entrance();
         map = new Map();
@@ -52,16 +55,19 @@ public class Menu {
                     case 1:
                         //System.out.println("\n PLAYY");//DEBUG Purpose..
                         click_test=false;
+                        menuId = 1;
                         map.printMap();
                         break;
                     case 2:
                         System.out.println("\n ABOUTTT");
                         click_test=false;
+                        menuId = 2;
                         aboutPage();
                         break;
                     case 3:
                         System.out.println("\n SETTINGSS");
                         click_test=false;
+                        menuId = 3;
                         break;
                     case 4:
                         //System.out.println("\n EXITTT \n\n ---- \n\n");//DEBUG Purpose
@@ -224,9 +230,19 @@ public class Menu {
 
         StdDraw.text(0.72,0.24,"Yellow Asteroit");
 
+        while (menuId == 2)
+        {
+            if (StdDraw.isKeyPressed(KeyEvent.VK_ESCAPE) ) {
+                menuId = 0;
+                menu();
+            }
+        }
+
     }
 
     public Map getMap() {return map;}
 
+    public int getMenuId () {return menuId;}
 
+    public void setMenuId(int menuId) {this.menuId = menuId;}
 }

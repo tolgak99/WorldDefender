@@ -17,6 +17,7 @@ public class Map {
 
 
     spaceShip ship;
+    Mortar mortar;
     private Font newFont;
 
     public Map(){  //Set map's row and column
@@ -36,7 +37,9 @@ public class Map {
 
         shipRot = 0;
         ship = new spaceShip();
+        mortar = new Mortar();
         newFont= new Font("Arial", Font.BOLD, 120);
+
     }
 
 
@@ -59,6 +62,9 @@ public class Map {
 
         StdDraw.picture(0.84,0.055,"spaceShip.png",0.02,0.03);
         StdDraw.text(0.87,0.05, Integer.toString(ship.getArmor()) );
+
+        StdDraw.picture(0.90,0.050,"Mortar.png",0.02,0.03);
+        StdDraw.text(0.93,0.05, Integer.toString(mortar.getExistMortar()) + "/" + Integer.toString(mortar.getMaxMortart()) );
 
         setSpaceShip();
         if(InitializeMap_Test) {
@@ -128,6 +134,8 @@ public class Map {
     }
 
     public spaceShip getShip() {return ship;}
+
+    public Mortar getMortar() {return mortar;}
 
     public ArrayList<Asteroit> getAsteroitsArray() {
         return AsteroitsArray;

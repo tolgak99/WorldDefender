@@ -43,13 +43,15 @@ public class Game {
         Map map = m.getMap();
         spaceShip ship = map.getShip();
         Turret turret = new Turret();
+        Mortar mortar = map.getMortar();
 
         ArrayList<Asteroit> Asteroits = map.getAsteroitsArray();
 
         System.out.println("\n This is a test for about page");//DEBUG Purpose..
+        System.out.println("\n This page is: " + m.getMenuId());//DEBUG Purpose..
 
         StdDraw.enableDoubleBuffering();
-        while (true) {
+        while (m.getMenuId() == 1) {
             /*
             if(StdDraw.isMousePressed())
                 System.out.println("\n Mouse_X :"+StdDraw.mouseX()+" Mouse_Y :"+StdDraw.mouseY());//DEBUG Purpose
@@ -203,6 +205,20 @@ public class Game {
                 else if (StdDraw.isKeyPressed(KeyEvent.VK_SPACE)){
                     turret.fire(button,ship.getXcoord(),ship.getYcoord(),map);
                 }
+                else if (StdDraw.isKeyPressed(KeyEvent.VK_ENTER)){
+                    mortar.fire(button,ship.getXcoord(),ship.getYcoord(),map);
+                }
+                else if (StdDraw.isKeyPressed(KeyEvent.VK_ESCAPE) ) {
+                    System.out.println("sa knk naber");
+                    m.menu();
+                    m.setMenuId(0);
+                }
+            }
+            else
+            {
+                System.out.println("Benzin bitti da");
+                m.menu();
+                m.setMenuId(0);
             }
         }
 
