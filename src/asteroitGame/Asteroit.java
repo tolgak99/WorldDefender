@@ -49,7 +49,9 @@ public abstract class Asteroit {
 
 
     public void printFuel(){
-        //StdDraw.picture(x_cor,y_cor,"gascan.png",0.06,0.06);
+        StdDraw.picture(fuel_x,fuel_y,"gascan.png",0.06,0.06);
+        System.out.println("Fuel Can printed !!!!");
+        StdDraw.show();
     }//End of method.
 
     public double[] getCoordinates(){

@@ -10,16 +10,19 @@ public class Menu {
     private int menuId;
     Map map;
 
+    private boolean click_test;
+
     public Menu(){
         menuId = 0;
         newFont= new Font("Arial", Font.BOLD, 120);
         entrance();
         map = new Map();
+        click_test=true;
     }
 
     public void menu() {
         int selection;
-        boolean click_test=true;
+
 
         StdDraw.clear(StdDraw.BLACK);
         newFont =new Font("Arial", Font.BOLD, 80);
@@ -37,6 +40,7 @@ public class Menu {
         StdDraw.setPenColor(StdDraw.WHITE);
         StdDraw.setFont(newFont);
         StdDraw.text(0.54,0.12,"You can use your mouse to choice from menu or you can use arrow keys, and press enter to choice.");
+        StdDraw.show();
 
         while(true){
             if(!click_test){
@@ -59,7 +63,7 @@ public class Menu {
                         map.printMap();
                         break;
                     case 2:
-                        System.out.println("\n ABOUTTT");
+                        //System.out.println("\n ABOUTTT");
                         click_test=false;
                         menuId = 2;
                         aboutPage();
@@ -115,7 +119,7 @@ public class Menu {
         StdDraw.pause(timeInterval);
         StdDraw.text(0.65,secondWord_Y,"R");
         StdDraw.pause(timeInterval);
-        StdDraw.picture(0.6,0.36,"remastered_logo.png",0.3,0.3);//
+        StdDraw.picture(0.6,0.36,"remastered_logo.png",0.3,0.3);// Remastered logo print section for entrance.
 
 
 
@@ -230,10 +234,13 @@ public class Menu {
 
         StdDraw.text(0.72,0.24,"Yellow Asteroit");
 
+        StdDraw.show();
+
         while (menuId == 2)
         {
             if (StdDraw.isKeyPressed(KeyEvent.VK_ESCAPE) ) {
                 menuId = 0;
+                click_test=true;
                 menu();
             }
         }
@@ -245,4 +252,14 @@ public class Menu {
     public int getMenuId () {return menuId;}
 
     public void setMenuId(int menuId) {this.menuId = menuId;}
+
+
+    public boolean isClick_test() {
+        return click_test;
+    }
+
+    public void setClick_test(boolean click_test) {
+        this.click_test = click_test;
+    }
+
 }

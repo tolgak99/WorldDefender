@@ -11,6 +11,8 @@ public class Map {
 
     static boolean InitializeMap_Test=true;
 
+    static int countNew=0;//DEBUG Purpose..
+
     //static int debug_count=0;//DEBUG Purpose..
 
     private ArrayList<Asteroit> AsteroitsArray = new ArrayList<Asteroit>();
@@ -54,6 +56,7 @@ public class Map {
         setWalls();          // Must be on the top, it clears the map!!
         printAsteroits();
 
+
         newFont =new Font("Arial", Font.BOLD, 20);
         StdDraw.setFont(newFont);
         StdDraw.setPenColor(StdDraw.GREEN);
@@ -72,7 +75,7 @@ public class Map {
             InitializeMap_Test=false;
         }
 
-
+        StdDraw.show();
     }
 
 
@@ -127,9 +130,15 @@ public class Map {
 
     //Print asteroid function for each frame.
     private void printAsteroits(){
+        countNew++;
+        System.out.println("countNew : "+countNew + "AsteroitsArray.size() : "+AsteroitsArray.size());//DEBUG Purpose..
+        System.out.println(" Object ID : "+this);//DEBUG Purpose..
+
         for(int i=0;i<AsteroitsArray.size();i++){
             if(AsteroitsArray.get(i).isActive)
                 AsteroitsArray.get(i).print();
+            //else if(true)
+                //AsteroitsArray.get(i).printFuel();
         }
     }
 

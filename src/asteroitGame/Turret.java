@@ -29,6 +29,7 @@ public class Turret extends  Gun{
                     //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        Asteroits.get(j).printFuel();
                         test = true;
                         break;
                     }
@@ -57,6 +58,7 @@ public class Turret extends  Gun{
                     //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        Asteroits.get(j).printFuel();
                         test = true;
                         break;
                     }
@@ -85,6 +87,7 @@ public class Turret extends  Gun{
                     //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        Asteroits.get(j).printFuel();
                         test = true;
                         break;
                     }
@@ -113,6 +116,7 @@ public class Turret extends  Gun{
                     //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        Asteroits.get(j).printFuel();
                         test = true;
                         break;
                     }
