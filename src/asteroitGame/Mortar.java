@@ -26,6 +26,8 @@ public class Mortar extends Gun{
                     collision = Game.hitAsteroid(Asteroits.get(j), positionArr[0], positionArr[1]);
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        Asteroits.get(j).printFuel();
+                        Game.increaseScore(Asteroits.get(j).getScore());
                         test = true;
                         break;
                     }

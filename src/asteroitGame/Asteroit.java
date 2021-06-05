@@ -5,7 +5,7 @@ import java.util.Random;
 public abstract class Asteroit {
     protected double x_cor, y_cor;//Asteroit coordinates.
     private double min_x,max_x,min_y,max_y;//Asteroit creation borders.
-    protected int health, damage;
+    protected int health, damage, score;
     protected boolean isActive;
 
     protected double speed;// will be check later.
@@ -16,6 +16,7 @@ public abstract class Asteroit {
 
 
     public Asteroit(){
+        score=0;
         health = 0;
         damage = 0;
         speed = 0;
@@ -33,6 +34,10 @@ public abstract class Asteroit {
 
     public int getHealth(){
         return health;
+    }
+
+    public int getScore(){
+        return score;
     }
 
 

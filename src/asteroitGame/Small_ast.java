@@ -7,6 +7,7 @@ public class Small_ast extends Asteroit{
         damage = 10;
         speed = 0;
         isActive=true;
+        score=10;
     }//End of default constructor.
 
 

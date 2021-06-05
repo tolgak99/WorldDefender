@@ -7,6 +7,7 @@ public class Large_ast extends Asteroit{
         damage = 30;
         speed = 0;
         isActive=true;
+        score=30;
     }//End of default constructor.
 
 

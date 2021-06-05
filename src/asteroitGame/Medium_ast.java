@@ -7,6 +7,7 @@ public class Medium_ast extends Asteroit{
         damage = 20;
         speed = 0;
         isActive=true;
+        score=20;
     }//End of default constructor.
 
 
