@@ -42,6 +42,8 @@ public class Menu {
         StdDraw.text(0.54,0.12,"You can use your mouse to choice from menu or you can use arrow keys, and press enter to choice.");
         StdDraw.show();
 
+        StdDraw.show();
+
         while(true){
             if(!click_test){
                 break;

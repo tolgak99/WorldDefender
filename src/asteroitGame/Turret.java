@@ -30,6 +30,7 @@ public class Turret extends  Gun{
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
                         Asteroits.get(j).printFuel();
+                        Game.increaseScore(2);
                         test = true;
                         break;
                     }
@@ -59,6 +60,7 @@ public class Turret extends  Gun{
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
                         Asteroits.get(j).printFuel();
+                        Game.increaseScore(2);
                         test = true;
                         break;
                     }
@@ -88,6 +90,7 @@ public class Turret extends  Gun{
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
                         Asteroits.get(j).printFuel();
+                        Game.increaseScore(2);
                         test = true;
                         break;
                     }
@@ -117,6 +120,7 @@ public class Turret extends  Gun{
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
                         Asteroits.get(j).printFuel();
+                        Game.increaseScore(2);
                         test = true;
                         break;
                     }

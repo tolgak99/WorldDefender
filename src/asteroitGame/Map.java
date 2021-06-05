@@ -60,6 +60,10 @@ public class Map {
         newFont =new Font("Arial", Font.BOLD, 20);
         StdDraw.setFont(newFont);
         StdDraw.setPenColor(StdDraw.GREEN);
+
+        StdDraw.picture(0.72,0.055,"Mortar.png",0.02,0.03);
+        StdDraw.text(0.74,0.05, Integer.toString(Game.getScore()) );
+
         StdDraw.picture(0.78,0.055,"gascan.png",0.06,0.06);
         StdDraw.text(0.8,0.05, Integer.toString(ship.getFuel()) );
 
@@ -68,6 +72,10 @@ public class Map {
 
         StdDraw.picture(0.90,0.050,"Mortar.png",0.02,0.03);
         StdDraw.text(0.93,0.05, Integer.toString(mortar.getExistMortar()) + "/" + Integer.toString(mortar.getMaxMortart()) );
+
+        StdDraw.picture(0.90,0.050,"Mortar.png",0.02,0.03);
+        StdDraw.text(0.93,0.05, Integer.toString(mortar.getExistMortar()) + "/" + Integer.toString(mortar.getMaxMortart()) );
+
 
         setSpaceShip();
         if(InitializeMap_Test) {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Game {
 
-    private int score;
+    private static int score;
 
     private Menu m;
     private Map map;
@@ -64,6 +64,18 @@ public class Game {
             return 0;
     }
 
+    public static void increaseScore (int point) {score += point;}
+
+    private void resetGame(){
+        Game game = new Game();
+
+    }
+
+    public static int getScore()
+    {
+        return score;
+    }
+
     public static void main(String[] args)
     {
         int i, collision,button=KeyEvent.VK_UP;
@@ -73,19 +85,8 @@ public class Game {
         Window window = new Window();
         window.drawWindow();
 
-
-        Game game;
-        Map map;
-        spaceShip ship;
-        Turret turret;
-        Mortar mortar;
-        Menu m;
-        ArrayList<Asteroit> Asteroits;
-
         //System.out.println("\n This is a test for about page");//DEBUG Purpose..
         //System.out.println("\n This page is: " + m.getMenuId());//DEBUG Purpose..
-
-
 
 
         while(true) {
@@ -93,21 +94,18 @@ public class Game {
             COUNTBIG++;//DEBUG Purpose..
             System.out.println("COUNTBIG : "+COUNTBIG);//DEBUG Purpose..
 
-            game=null;
-            game = new Game();
+            Game game = new Game();
 
-
-
-            m=game.getMenu();
+            Menu m = game.getMenu();
             m.menu();
 
-            map = game.getMap();
-            ship = game.getShip();
-            turret = game.getTurret();
-            mortar = game.getMortar();
+            Map map = game.getMap();
+            spaceShip ship = game.getShip();
+            Turret turret = game.getTurret();
+            Mortar mortar = game.getMortar();
 
 
-            Asteroits = map.getAsteroitsArray();
+            ArrayList<Asteroit> Asteroits = map.getAsteroitsArray();
 
             StdDraw.enableDoubleBuffering();
 
@@ -280,6 +278,7 @@ public class Game {
                         m.setClick_test(true);
                         m.setMenuId(0);
                         //m.menu();
+                        game.resetGame();
                         break;
                     }
                 } else {
@@ -294,36 +293,13 @@ public class Game {
                     m.setClick_test(true);
                     m.setMenuId(0);
                     //m.menu();
-                    //game.resetGame();
+                    game.resetGame();
                     break;
                 }
             }
             map.InitializeMap_Test = true;
         }
 
-    }
-
-    public int getScore() {return score;}
-
-    public void setScore (int score) {this.score = score;}
-
-    public void increaseScore (int point) {score += point;}
-
-    private void resetGame(){
-        Game game = new Game();
-
-        /*
-        Map map = game.getMap();
-        spaceShip ship = game.getShip();
-        Turret turret = game.getTurret();
-        Mortar mortar = game.getMortar();
-        Menu m=game.getMenu();
-        m.menu();
-*/
-
-        //m = new Menu();
-        //turret = new Turret();
-        //map.InitializeMap_Test = true;
     }
 
 }
