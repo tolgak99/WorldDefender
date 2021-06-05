@@ -15,7 +15,6 @@ public class Mortar extends Gun{
         double[] positionArr;
         boolean test=false;
         ArrayList<Asteroit> Asteroits = map.getAsteroitsArray();
-        System.out.println("Mortar num: "+ existMortar);
         while (existMortar > 0)
         {
             if(StdDraw.isMousePressed() && mouseLocation()[0] != b && mouseLocation()[1] != c)
@@ -26,7 +25,7 @@ public class Mortar extends Gun{
                     collision = Game.hitAsteroid(Asteroits.get(j), positionArr[0], positionArr[1]);
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
-                        Asteroits.get(j).printFuel();
+                        Asteroits.get(j).createFuel();
                         Game.increaseScore(Asteroits.get(j).getScore());
                         test = true;
                         break;

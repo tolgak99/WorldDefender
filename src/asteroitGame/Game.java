@@ -50,6 +50,11 @@ public class Game {
     public static int hitAsteroid(Asteroit obj, double x, double y){
         double[] arr= obj.getCoordinates();
 
+        if(!obj.isActive && obj.fuelActive ){
+            obj.removeFuel();
+            return -1;
+        }
+
         if ((Math.abs(arr[0]-x)< 0.022)&& (Math.abs(arr[1]-y)<0.022) && obj.isActive){
             return obj.getDamage();
         }
@@ -129,9 +134,12 @@ public class Game {
 
                         for (i = 0; i < Asteroits.size(); i++) {
                             collision = hitAsteroid(Asteroits.get(i), x, y);
-                            if (collision != 0) {
+                            if (collision > 0) {
                                 ship.getDamage(collision);
                                 Asteroits.get(i).destroyAsteroid();
+                            }
+                            else if(collision<0){
+                                ship.increaseFuel();
                             }
 
 
@@ -158,9 +166,12 @@ public class Game {
 
                         for (i = 0; i < Asteroits.size(); i++) {
                             collision = hitAsteroid(Asteroits.get(i), x, y);
-                            if (collision != 0) {
+                            if (collision > 0) {
                                 ship.getDamage(collision);
                                 Asteroits.get(i).destroyAsteroid();
+                            }
+                            else if(collision<0){
+                                ship.increaseFuel();
                             }
 
 
@@ -187,9 +198,12 @@ public class Game {
 
                         for (i = 0; i < Asteroits.size(); i++) {
                             collision = hitAsteroid(Asteroits.get(i), x, y);
-                            if (collision != 0) {
+                            if (collision > 0) {
                                 ship.getDamage(collision);
                                 Asteroits.get(i).destroyAsteroid();
+                            }
+                            else if(collision<0){
+                                ship.increaseFuel();
                             }
 
 
@@ -216,9 +230,12 @@ public class Game {
 
                         for (i = 0; i < Asteroits.size(); i++) {
                             collision = hitAsteroid(Asteroits.get(i), x, y);
-                            if (collision != 0) {
+                            if (collision > 0) {
                                 ship.getDamage(collision);
                                 Asteroits.get(i).destroyAsteroid();
+                            }
+                            else if(collision<0){
+                                ship.increaseFuel();
                             }
 
 

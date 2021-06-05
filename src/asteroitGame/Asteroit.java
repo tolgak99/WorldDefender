@@ -7,6 +7,7 @@ public abstract class Asteroit {
     private double min_x,max_x,min_y,max_y;//Asteroit creation borders.
     protected int health, damage, score;
     protected boolean isActive;
+    protected boolean fuelActive;
 
     protected double speed;// will be check later.
     public double fuel_x, fuel_y;//will be check if it should be public or private.
@@ -21,6 +22,7 @@ public abstract class Asteroit {
         fuel_x = -1;
         fuel_y = -1;
         isActive=true;
+        fuelActive=true;
     }//End of default constructor.
 
 
@@ -42,17 +44,20 @@ public abstract class Asteroit {
         isActive=false;
     }
 
+    public void removeFuel() { fuelActive=false;}
+
 
     public void createFuel(){
-        fuel_x = x_cor;
-        fuel_y = y_cor;
+        if(score==30) {
+            fuel_x = x_cor;
+            fuel_y = y_cor;
+        }
     }//End of method.
 
 
     public void printFuel(){
-        StdDraw.picture(fuel_x,fuel_y,"gascan.png",0.06,0.06);
-        System.out.println("Fuel Can printed !!!!");
-        StdDraw.show();
+        if(score==30 && fuelActive)
+            StdDraw.picture(fuel_x,fuel_y,"gascan.png",0.06,0.06);
     }//End of method.
 
     public double[] getCoordinates(){

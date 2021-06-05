@@ -131,8 +131,8 @@ public class Map {
         for(int i=0;i<AsteroitsArray.size();i++){
             if(AsteroitsArray.get(i).isActive)
                 AsteroitsArray.get(i).print();
-            //else if(true)
-                //AsteroitsArray.get(i).printFuel();
+            else
+                AsteroitsArray.get(i).printFuel();
         }
     }
 

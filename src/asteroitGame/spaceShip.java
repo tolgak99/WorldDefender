@@ -42,4 +42,9 @@ public class spaceShip {
         return  true;
     }
 
+    public void increaseFuel() {
+            fuel += 30;
+    }
+
+
 }
