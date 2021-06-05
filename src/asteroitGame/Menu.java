@@ -8,6 +8,7 @@ public class Menu {
     private Font newFont;
     private double[] positionArr;
     private int menuId;
+    private static boolean firstTime = true;
     Map map;
 
     private boolean click_test;
@@ -15,7 +16,10 @@ public class Menu {
     public Menu(){
         menuId = 0;
         newFont= new Font("Arial", Font.BOLD, 120);
-        entrance();
+        if (firstTime) {
+            entrance();
+            firstTime = false;
+        }
         map = new Map();
         click_test=true;
     }
@@ -40,8 +44,6 @@ public class Menu {
         StdDraw.setPenColor(StdDraw.WHITE);
         StdDraw.setFont(newFont);
         StdDraw.text(0.54,0.12,"You can use your mouse to choice from menu or you can use arrow keys, and press enter to choice.");
-        StdDraw.show();
-
         StdDraw.show();
 
         while(true){
@@ -87,7 +89,7 @@ public class Menu {
 
     }
 
-    private void entrance(){
+    public void entrance(){
         int timeInterval=140;
         double firstWord_Y =0.7;
         double secondWord_Y =0.54;

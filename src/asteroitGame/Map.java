@@ -11,10 +11,6 @@ public class Map {
 
     static boolean InitializeMap_Test=true;
 
-    static int countNew=0;//DEBUG Purpose..
-
-    //static int debug_count=0;//DEBUG Purpose..
-
     private ArrayList<Asteroit> AsteroitsArray = new ArrayList<Asteroit>();
 
 
@@ -48,10 +44,6 @@ public class Map {
 
     public void printMap()
     {
-        /*
-        debug_count++;
-        System.out.println("debug_count : "+debug_count);
-        */
 
         setWalls();          // Must be on the top, it clears the map!!
         printAsteroits();
@@ -61,7 +53,7 @@ public class Map {
         StdDraw.setFont(newFont);
         StdDraw.setPenColor(StdDraw.GREEN);
 
-        StdDraw.picture(0.72,0.055,"Mortar.png",0.02,0.03);
+        StdDraw.text(0.72,0.05, "Score: " );
         StdDraw.text(0.74,0.05, Integer.toString(Game.getScore()) );
 
         StdDraw.picture(0.78,0.055,"gascan.png",0.06,0.06);
@@ -131,17 +123,11 @@ public class Map {
             AsteroitsArray.get(i).calculater();
             AsteroitsArray.get(i).print();
         }
-
-        System.out.println(num0+" num1 : "+num1+" num2 : "+num2+" Total array size : "+AsteroitsArray.size());//DEBUG Purpose..
     }
 
 
     //Print asteroid function for each frame.
     private void printAsteroits(){
-        countNew++;
-        System.out.println("countNew : "+countNew + "AsteroitsArray.size() : "+AsteroitsArray.size());//DEBUG Purpose..
-        System.out.println(" Object ID : "+this);//DEBUG Purpose..
-
         for(int i=0;i<AsteroitsArray.size();i++){
             if(AsteroitsArray.get(i).isActive)
                 AsteroitsArray.get(i).print();
@@ -157,9 +143,4 @@ public class Map {
     public ArrayList<Asteroit> getAsteroitsArray() {
         return AsteroitsArray;
     }
-
-    /*
-    public int hitWall(int, int);
-    public void MortarFire(Asteroit&, int, int);
-     */
 }

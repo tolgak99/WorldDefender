@@ -26,7 +26,6 @@ public class Turret extends  Gun{
             {
                 for (int j = 0; j < Asteroits.size(); j++) {
                     collision = Game.hitAsteroid(Asteroits.get(j), x, y);
-                    //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
                         Asteroits.get(j).printFuel();
@@ -56,7 +55,6 @@ public class Turret extends  Gun{
             {
                 for (int j = 0; j < Asteroits.size(); j++) {
                     collision = Game.hitAsteroid(Asteroits.get(j), x, y);
-                    //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
                         Asteroits.get(j).printFuel();
@@ -86,7 +84,6 @@ public class Turret extends  Gun{
             {
                 for (int j = 0; j < Asteroits.size(); j++) {
                     collision = Game.hitAsteroid(Asteroits.get(j), x, y);
-                    //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
                         Asteroits.get(j).printFuel();
@@ -116,7 +113,6 @@ public class Turret extends  Gun{
             {
                 for (int j = 0; j < Asteroits.size(); j++) {
                     collision = Game.hitAsteroid(Asteroits.get(j), x, y);
-                    //System.out.println("\n collision : "+ collision);//DEBUG Purpose..
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
                         Asteroits.get(j).printFuel();

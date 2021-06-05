@@ -9,11 +9,7 @@ public abstract class Asteroit {
     protected boolean isActive;
 
     protected double speed;// will be check later.
-
-
     public double fuel_x, fuel_y;//will be check if it should be public or private.
-
-
 
     public Asteroit(){
         score=0;
