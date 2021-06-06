@@ -1,5 +1,6 @@
 package asteroitGame;
 
+
 public class spaceShip {
 
     private int fuel;
@@ -8,7 +9,7 @@ public class spaceShip {
     private double y;
     private int rotation;
 
-    spaceShip() {fuel = 1000; armor = 100; x = 0.5; y = 0.5; rotation = 0;}
+    spaceShip() {fuel = 200; armor = 100; x = 0.5; y = 0.5; rotation = 0;}
 
     public int getFuel() {return fuel;}
 

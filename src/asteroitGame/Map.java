@@ -1,5 +1,4 @@
 package asteroitGame;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -53,19 +52,21 @@ public class Map {
         StdDraw.setFont(newFont);
         StdDraw.setPenColor(StdDraw.GREEN);
 
-        StdDraw.text(0.72,0.05, "Score: " );
+        StdDraw.text(0.12,0.05, "Made by Ercan COS & Tolga KALAYCIOGLU" );
+
+        StdDraw.text(0.71,0.05, "Score: " );
         StdDraw.text(0.74,0.05, Integer.toString(Game.getScore()) );
 
-        StdDraw.picture(0.78,0.055,"gascan.png",0.06,0.06);
+        StdDraw.picture(0.78,0.055,"images/gascan.png",0.06,0.06);
         StdDraw.text(0.8,0.05, Integer.toString(ship.getFuel()) );
 
-        StdDraw.picture(0.84,0.055,"spaceShip.png",0.02,0.03);
+        StdDraw.picture(0.84,0.055,"images/spaceShip.png",0.02,0.03);
         StdDraw.text(0.87,0.05, Integer.toString(ship.getArmor()) );
 
-        StdDraw.picture(0.90,0.050,"Mortar.png",0.02,0.03);
+        StdDraw.picture(0.90,0.050,"images/Mortar.png",0.02,0.03);
         StdDraw.text(0.93,0.05, Integer.toString(mortar.getExistMortar()) + "/" + Integer.toString(mortar.getMaxMortart()) );
 
-        StdDraw.picture(0.90,0.050,"Mortar.png",0.02,0.03);
+        StdDraw.picture(0.90,0.050,"images/Mortar.png",0.02,0.03);
         StdDraw.text(0.93,0.05, Integer.toString(mortar.getExistMortar()) + "/" + Integer.toString(mortar.getMaxMortart()) );
 
 
@@ -90,7 +91,7 @@ public class Map {
 
     private void setSpaceShip()
     {
-        StdDraw.picture(ship.getXcoord(),ship.getYcoord(),"spaceShip.png",0.03,0.05, ship.getRotation());
+        StdDraw.picture(ship.getXcoord(),ship.getYcoord(),"images/spaceShip.png",0.03,0.05, ship.getRotation());
     }
 
 

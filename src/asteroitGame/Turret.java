@@ -1,8 +1,8 @@
 package asteroitGame;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+
 
 public class Turret extends  Gun{
 
@@ -28,6 +28,7 @@ public class Turret extends  Gun{
                     collision = Game.hitAsteroid(Asteroits.get(j), x, y);
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        StdAudio.play("sounds/meteorexp.wav");
                         Asteroits.get(j).createFuel();
                         Game.increaseScore(Asteroits.get(j).getScore());
                         test = true;
@@ -41,7 +42,7 @@ public class Turret extends  Gun{
                     break;
                 }
                 else {
-                    StdDraw.picture(x, y, "laserBullet.png", 0.1, 0.1, -90);
+                    StdDraw.picture(x, y, "images/laserBullet.png", 0.1, 0.1, -90);
                     StdDraw.show();
                     StdDraw.pause(10);
                     map.printMap();
@@ -57,6 +58,7 @@ public class Turret extends  Gun{
                     collision = Game.hitAsteroid(Asteroits.get(j), x, y);
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        StdAudio.play("sounds/meteorexp.wav");
                         Asteroits.get(j).createFuel();
                         Game.increaseScore(Asteroits.get(j).getScore());
                         test = true;
@@ -70,7 +72,7 @@ public class Turret extends  Gun{
                     break;
                 }
                 else {
-                    StdDraw.picture(x, y, "laserBullet.png", 0.1, 0.1, -90);
+                    StdDraw.picture(x, y, "images/laserBullet.png", 0.1, 0.1, -90);
                     StdDraw.show();
                     StdDraw.pause(10);
                     map.printMap();
@@ -86,6 +88,7 @@ public class Turret extends  Gun{
                     collision = Game.hitAsteroid(Asteroits.get(j), x, y);
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        StdAudio.play("sounds/meteorexp.wav");
                         Asteroits.get(j).createFuel();
                         Game.increaseScore(Asteroits.get(j).getScore());
                         test = true;
@@ -99,7 +102,7 @@ public class Turret extends  Gun{
                     break;
                 }
                 else {
-                    StdDraw.picture(x, y, "laserBullet.png", 0.1, 0.1, -90);
+                    StdDraw.picture(x, y, "images/laserBullet.png", 0.1, 0.1, -90);
                     StdDraw.show();
                     StdDraw.pause(10);
                     map.printMap();
@@ -115,6 +118,7 @@ public class Turret extends  Gun{
                     collision = Game.hitAsteroid(Asteroits.get(j), x, y);
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        StdAudio.play("sounds/meteorexp.wav");
                         Asteroits.get(j).createFuel();
                         Game.increaseScore(Asteroits.get(j).getScore());
                         test = true;
@@ -128,7 +132,7 @@ public class Turret extends  Gun{
                     break;
                 }
                 else {
-                    StdDraw.picture(x, y, "laserBullet.png", 0.1, 0.1, -90);
+                    StdDraw.picture(x, y, "images/laserBullet.png", 0.1, 0.1, -90);
                     StdDraw.show();
                     StdDraw.pause(10);
                     map.printMap();

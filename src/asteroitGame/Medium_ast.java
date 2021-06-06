@@ -12,6 +12,6 @@ public class Medium_ast extends Asteroit{
 
 
     public void print(){
-        StdDraw.picture(x_cor,y_cor,"asteroid-medium.png",0.033,0.053);
+        StdDraw.picture(x_cor,y_cor,"images/asteroid-medium.png",0.033,0.053);
     }//End of method.
 }

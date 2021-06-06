@@ -1,5 +1,4 @@
 package asteroitGame;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.lang.ref.Cleaner;
@@ -26,7 +25,7 @@ public class Menu {
 
     public void menu() {
         int selection;
-
+        StdAudio.loop("sounds/bgsound.wav");
 
         StdDraw.clear(StdDraw.BLACK);
         newFont =new Font("Arial", Font.BOLD, 80);
@@ -58,7 +57,6 @@ public class Menu {
 
                 switch (selection) {
                     case -1:
-                        System.out.println("\n There is an error about pointing.\n\n");
                         break;
                     case 1:
                         //System.out.println("\n PLAYY");//DEBUG Purpose..
@@ -76,6 +74,7 @@ public class Menu {
                         System.out.println("\n SETTINGSS");
                         click_test=false;
                         menuId = 3;
+                        settingsPage();
                         break;
                     case 4:
                         //System.out.println("\n EXITTT \n\n ---- \n\n");//DEBUG Purpose
@@ -94,6 +93,7 @@ public class Menu {
         double firstWord_Y =0.7;
         double secondWord_Y =0.54;
 
+        StdAudio.play("sounds/enter.wav");
         StdDraw.setPenColor(StdDraw.WHITE);
         StdDraw.setFont(newFont);
         StdDraw.text(0.2,firstWord_Y,"W");
@@ -123,7 +123,7 @@ public class Menu {
         StdDraw.pause(timeInterval);
         StdDraw.text(0.65,secondWord_Y,"R");
         StdDraw.pause(timeInterval);
-        StdDraw.picture(0.6,0.36,"remastered_logo.png",0.3,0.3);// Remastered logo print section for entrance.
+        StdDraw.picture(0.6,0.36,"images/remastered_logo.png",0.3,0.3);// Remastered logo print section for entrance.
 
 
 
@@ -165,7 +165,7 @@ public class Menu {
     private void aboutPage() {
         StdDraw.clear(StdDraw.BLACK);
 
-        StdDraw.picture(0.022,0.95,"UI_back.png",0.034,0.06);//Back button on the up-left corner.
+        StdDraw.picture(0.022,0.95,"images/UI_back.png",0.034,0.06);//Back button on the up-left corner.
 
         newFont =new Font("Arial", Font.BOLD, 32);
         StdDraw.setFont(newFont);
@@ -242,6 +242,48 @@ public class Menu {
 
         while (menuId == 2)
         {
+            if(StdDraw.isMousePressed()) {
+                positionArr = mouseLocation();
+                if ((positionArr[0] >= 0.022 && positionArr[0] <= 0.035) && (positionArr[1] >= 0.95 && positionArr[1] < 0.99)) {
+                    StdAudio.stopLoop();
+                    menuId = 0;
+                    click_test = true;
+                    menu();
+                }
+            }
+            if (StdDraw.isKeyPressed(KeyEvent.VK_ESCAPE) ) {
+                menuId = 0;
+                click_test=true;
+                menu();
+            }
+        }
+
+    }
+
+    private void settingsPage() {
+        StdDraw.clear(StdDraw.BLACK);
+
+        StdDraw.picture(0.022,0.95,"images/UI_back.png",0.034,0.06);//Back button on the up-left corner.
+
+        newFont =new Font("Arial", Font.BOLD, 32);
+        StdDraw.setFont(newFont);
+        StdDraw.setPenColor(StdDraw.RED);
+
+        StdDraw.text(0.48,0.50,"Settings Under Construction");
+
+        StdDraw.show();
+
+        while (menuId == 3)
+        {
+            if(StdDraw.isMousePressed()) {
+                positionArr = mouseLocation();
+                if ((positionArr[0] >= 0.022 && positionArr[0] <= 0.035) && (positionArr[1] >= 0.95 && positionArr[1] < 0.99)) {
+                    StdAudio.stopLoop();
+                    menuId = 0;
+                    click_test = true;
+                    menu();
+                }
+            }
             if (StdDraw.isKeyPressed(KeyEvent.VK_ESCAPE) ) {
                 menuId = 0;
                 click_test=true;

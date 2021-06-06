@@ -57,7 +57,7 @@ public abstract class Asteroit {
 
     public void printFuel(){
         if(score==30 && fuelActive)
-            StdDraw.picture(fuel_x,fuel_y,"gascan.png",0.06,0.06);
+            StdDraw.picture(fuel_x,fuel_y,"images/gascan.png",0.06,0.06);
     }//End of method.
 
     public double[] getCoordinates(){

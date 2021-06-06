@@ -1,6 +1,7 @@
 package asteroitGame;
 import java.awt.Color;
 
+
 public class Window {
 
     private int width;

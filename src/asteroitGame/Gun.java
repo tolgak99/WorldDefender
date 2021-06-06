@@ -1,5 +1,6 @@
 package asteroitGame;
 
+
 public abstract class Gun {
 
     protected int damage;

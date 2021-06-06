@@ -1,6 +1,7 @@
 package asteroitGame;
 import com.sun.source.doctree.AttributeTree; // will be check if it is necessary.
 
+
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -251,6 +252,7 @@ public class Game {
                         break;
                     }
                     if (StdDraw.isKeyPressed(KeyEvent.VK_SPACE)) {
+                        StdAudio.play("sounds/lasergun.wav");
                         turret.fire(button, ship.getXcoord(), ship.getYcoord(), map);
                     }
                 } else {

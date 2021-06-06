@@ -19,19 +19,22 @@ public class Mortar extends Gun{
         {
             if(StdDraw.isMousePressed() && mouseLocation()[0] != b && mouseLocation()[1] != c)
             {
+                StdAudio.play("sounds/mortar.wav");
+                StdDraw.pause(3000);
                 positionArr = mouseLocation();
 
                 for (int j = 0; j < Asteroits.size(); j++) {
                     collision = Game.hitAsteroid(Asteroits.get(j), positionArr[0], positionArr[1]);
                     if (collision != 0) {
                         Asteroits.get(j).destroyAsteroid();
+                        StdAudio.play("sounds/meteorexp.wav");
                         Asteroits.get(j).createFuel();
                         Game.increaseScore(Asteroits.get(j).getScore());
                         test = true;
                         break;
                     }
                 }
-                StdDraw.picture(mouseLocation()[0], mouseLocation()[1], "laserBullet.png", 0.1, 0.1, 0);
+                StdDraw.picture(mouseLocation()[0], mouseLocation()[1], "images/laserBullet.png", 0.1, 0.1, 0);
                 if (test) {
                     existMortar--;
                     StdDraw.show();
