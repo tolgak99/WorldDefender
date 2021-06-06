@@ -60,6 +60,7 @@ public class Menu {
                         break;
                     case 1:
                         //System.out.println("\n PLAYY");//DEBUG Purpose..
+                        StdAudio.stopLoop();
                         click_test=false;
                         menuId = 1;
                         map.printMap();
@@ -244,7 +245,7 @@ public class Menu {
         {
             if(StdDraw.isMousePressed()) {
                 positionArr = mouseLocation();
-                if ((positionArr[0] >= 0.022 && positionArr[0] <= 0.035) && (positionArr[1] >= 0.95 && positionArr[1] < 0.99)) {
+                if ((positionArr[0] >= 0.000 && positionArr[0] <= 0.035) && (positionArr[1] >= 0.92 && positionArr[1] < 0.99)) {
                     StdAudio.stopLoop();
                     menuId = 0;
                     click_test = true;
@@ -277,7 +278,7 @@ public class Menu {
         {
             if(StdDraw.isMousePressed()) {
                 positionArr = mouseLocation();
-                if ((positionArr[0] >= 0.022 && positionArr[0] <= 0.035) && (positionArr[1] >= 0.95 && positionArr[1] < 0.99)) {
+                if ((positionArr[0] >= 0.000 && positionArr[0] <= 0.035) && (positionArr[1] >= 0.92 && positionArr[1] < 0.99)) {
                     StdAudio.stopLoop();
                     menuId = 0;
                     click_test = true;
